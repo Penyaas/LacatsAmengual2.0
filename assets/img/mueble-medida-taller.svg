@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="t1">
+  <title id="t1">Placeholder — mueble a medida terminado en el taller</title>
+  <rect width="1200" height="1600" fill="#ECE3D2"/>
+  <rect x="2" y="2" width="1196" height="1596" fill="none" stroke="#6B4A2F" stroke-opacity="0.35" stroke-width="3"/>
+  <line x1="0" y1="0" x2="1200" y2="1600" stroke="#6B4A2F" stroke-opacity="0.15" stroke-width="2"/>
+  <line x1="1200" y1="0" x2="0" y2="1600" stroke="#6B4A2F" stroke-opacity="0.15" stroke-width="2"/>
+  <text x="600" y="760" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="42" fill="#4E3620">Foto pendiente</text>
+  <text x="600" y="818" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#2A2622">Mueble a medida terminado en el taller</text>
+  <text x="600" y="1520" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#6B4A2F">sustituir por mueble-medida-taller.jpg · 1200×1600 px (3:4)</text>
+</svg>
