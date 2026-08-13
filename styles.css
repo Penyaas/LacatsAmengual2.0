@@ -383,7 +383,6 @@ h4 { font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: 6
   aspect-ratio: 4 / 3;
   cursor: zoom-in;
 }
-.gallery-item:nth-child(5n+1) { aspect-ratio: 3 / 4; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slow) var(--ease-out); }
 .gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.04); }
 .gallery-caption {

@@ -41,23 +41,25 @@ python -m http.server 8080
 En cualquiera de los tres, actualiza antes:
 - La URL canónica (`https://www.lacatsamengual.es/...`) en el `<head>` de cada página, en `robots.txt` y en `sitemap.xml`, por el dominio real donde se publique.
 
-## Sustituir las imágenes placeholder
+## Imágenes
 
-Todas las fotos son `.svg` con un recuadro y una etiqueta indicando qué foto va ahí y en qué proporción. Sustitúyelas por fotografías reales del taller, manteniendo el mismo nombre de archivo (o actualizando la ruta en el HTML) y, idealmente, en formato `.webp` con fallback `.jpg`:
+Las fotos placeholder en `.svg` ya se han sustituido por fotografías reales del taller (recortadas, corregidas de color/nitidez y exportadas en `.jpg` + `.webp`, servidas con `<picture>`). Los originales sin recortar quedan en `assets/img/originals/` por si hace falta re-encuadrar algo — no se referencian desde el HTML.
 
-| Archivo actual | Foto que debe ir | Proporción / tamaño recomendado |
-|---|---|---|
-| `assets/img/hero-lacado.svg` | Superficie de mueble lacado, luz rasante | 4:5 · ~1200×1500 px |
-| `assets/img/taller-can-bareta-manacor.svg` | Interior del taller | 3:4 · ~1200×1600 px |
-| `assets/img/restauracion-antes-comoda.svg` | Mueble antes de restaurar | 4:3 · ~1200×900 px |
-| `assets/img/restauracion-despues-comoda.svg` | Mismo mueble después | 4:3 · ~1200×900 px |
-| `assets/img/detalle-acabado-satinado.svg` | Detalle de un acabado satinado | 4:3 · ~1200×900 px |
-| `assets/img/lacado-puertas-cocina-mate.svg` | Puertas de cocina lacadas en mate | 4:3 · ~1200×900 px |
-| `assets/img/mueble-medida-taller.svg` | Mueble a medida terminado | 3:4 · ~1200×1600 px |
-| `assets/og-image.svg` | Imagen para compartir en redes (taller o pieza acabada) | 1200×630 px, formato `.jpg` |
-| `assets/favicon.svg` | Puede mantenerse el monograma "CB" en SVG, o sustituirse | 32×32 px |
+| Archivo | Foto |
+|---|---|
+| `assets/img/hero-lacado.jpg/.webp` | Mueble lacado en blanco, superficie con luz rasante (hero, 4:5) |
+| `assets/img/taller-can-bareta-manacor.jpg/.webp` | Sillas recién lacadas, interior del taller |
+| `assets/img/restauracion-antes-puerta.jpg/.webp` | Puerta antigua en bruto, antes de lacar |
+| `assets/img/restauracion-despues-puerta.jpg/.webp` | Misma puerta restaurada, teñida y montada |
+| `assets/img/detalle-acabado-satinado.jpg/.webp` | Detalle del acabado brillo, barra de restaurante |
+| `assets/img/lacado-persianas-fachada.jpg/.webp` | Fachada con persianas y puerta exterior lacadas |
+| `assets/img/mueble-medida-taller.jpg/.webp` | Librería a medida, instalación en casa del cliente |
+| `assets/img/portal-antes.jpg/.webp` | Portal de garaje en arco, envejecido |
+| `assets/img/portal-despues.jpg/.webp` | Mismo portal restaurado y lacado |
+| `assets/og-image.jpg` | Fachada de la vivienda, imagen para compartir en redes (1200×630) |
+| `assets/favicon.svg` | Monograma "CB", sin cambios |
 
-Todas las imágenes de la galería y del proceso llevan `loading="lazy"` salvo la del hero. Si generas versiones `.webp`, usa `<picture>` con fallback `.jpg` para máxima compatibilidad.
+Si llegan fotos nuevas, sigue el mismo patrón: recorte a la proporción del hueco (ver `aspect-ratio` en `styles.css`, sección `.gallery-item` / `.hero-media`), exporta `.jpg` (calidad ~78) y `.webp` (calidad ~74), y enlaza ambos con `<picture><source type="image/webp">...<img></picture>`. Todas las imágenes de la galería llevan `loading="lazy"` salvo la del hero.
 
 **Favicon `.ico`:** el sitio usa `favicon.svg` (soportado por navegadores modernos). Para compatibilidad total, genera un `favicon.ico` a partir del SVG (por ejemplo con [realfavicongenerator.net](https://realfavicongenerator.net)) y añade `<link rel="icon" href="/assets/favicon.ico" sizes="any">` en el `<head>` de cada página.
 
@@ -103,7 +105,7 @@ También revisa periódicamente el valor `reviewCount` del JSON-LD en `index.htm
 - [ ] JSON-LD válido, con la dirección verificada ([validador de Google](https://search.google.com/test/rich-results))
 - [ ] Enlaces legales funcionando
 - [ ] Sin errores de consola ni enlaces rotos
-- [ ] Imágenes placeholder sustituidas por fotos reales
+- [x] Imágenes placeholder sustituidas por fotos reales
 - [ ] Formulario conectado a Netlify/Formspree si no se quiere depender del fallback `mailto:`
 - [ ] URLs canónicas y `sitemap.xml` actualizados con el dominio real
 - [ ] Lighthouse ≥ 95 en Rendimiento, Accesibilidad, Buenas prácticas y SEO

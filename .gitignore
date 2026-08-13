@@ -2,3 +2,9 @@
 .claude/
 skills-lock.json
 node_modules/
+
+# Local Netlify folder
+.netlify
+
+# Raw, uncropped source photos (not referenced from the site)
+assets/img/originals/
