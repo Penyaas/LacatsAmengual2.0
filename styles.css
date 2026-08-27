@@ -262,50 +262,61 @@ h4 { font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: 6
 
 /* Hero */
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 640px;
   padding-top: calc(var(--header-height) + var(--space-2xl));
   padding-bottom: var(--space-2xl);
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.hero .wrap {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: var(--space-2xl);
-  align-items: center;
+.hero-bg { position: absolute; inset: 0; z-index: -1; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 68% 55%; }
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba(20,17,14,0.9) 0%, rgba(20,17,14,0.68) 34%, rgba(20,17,14,0.32) 58%, rgba(20,17,14,0.12) 78%),
+    linear-gradient(to top, rgba(20,17,14,0.55) 0%, rgba(20,17,14,0) 36%);
 }
-.hero-copy { display: flex; flex-direction: column; gap: var(--space-md); }
-.hero-title { font-size: var(--text-display); }
+.hero-inner { position: relative; }
+.hero-copy { display: flex; flex-direction: column; gap: var(--space-md); max-width: 640px; }
+.hero-title { font-size: var(--text-display); color: var(--color-cream); }
+.hero-copy .eyebrow { color: var(--color-cream); }
+.hero-copy .eyebrow::before { background: var(--color-cream); }
+.hero-copy .lede { color: rgba(244,239,231,0.86); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-xs); }
+.hero .btn-outline { color: var(--color-cream); border-color: rgba(244,239,231,0.5); }
+.hero .btn-outline:hover { border-color: var(--color-cream); background: rgba(244,239,231,0.12); }
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-md);
   margin-top: var(--space-sm);
   padding-top: var(--space-sm);
-  border-top: 1px solid var(--color-line);
+  border-top: 1px solid rgba(244,239,231,0.28);
   font-size: var(--text-sm);
-  color: var(--color-charcoal-soft);
+  color: rgba(244,239,231,0.8);
 }
-.hero-meta strong { color: var(--color-charcoal); font-weight: 600; }
-.hero-media { position: relative; }
-.hero-media figure {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--color-line);
-  aspect-ratio: 4 / 5;
+.hero-meta strong { color: var(--color-cream); font-weight: 600; }
+
+.hero-badge-row {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-xl);
 }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; }
 .hero-rating {
-  position: absolute;
-  left: -1.25rem;
-  bottom: -1.25rem;
-  background: var(--color-paper);
-  border: 1px solid var(--color-line);
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(6px);
   border-radius: var(--radius-md);
   padding: var(--space-sm) var(--space-md);
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  box-shadow: 0 12px 28px -18px rgba(42,38,34,0.35);
+  box-shadow: 0 12px 28px -14px rgba(20,17,14,0.55);
 }
 .hero-rating .stars { color: var(--color-walnut); font-size: var(--text-lg); letter-spacing: 0.05em; }
 .hero-rating .rating-text { font-size: var(--text-xs); color: var(--color-charcoal-soft); }
@@ -644,13 +655,17 @@ h4 { font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: 6
 @media (max-width: 979px) {
   .nav-links, .header-actions .call-chip { display: none; }
   .nav-toggle { display: flex; }
-  .hero .wrap { grid-template-columns: 1fr; }
-  .hero-media { order: -1; }
-  .hero-rating { left: var(--space-sm); bottom: -1rem; }
   .call-fab { display: flex; }
 }
 @media (max-width: 639px) {
+  .hero { min-height: 0; padding-top: calc(var(--header-height) + var(--space-xl)); padding-bottom: var(--space-lg); }
+  .hero-bg img { object-position: 42% 50%; }
+  .hero-scrim {
+    background:
+      linear-gradient(180deg, rgba(20,17,14,0.86) 0%, rgba(20,17,14,0.74) 45%, rgba(20,17,14,0.82) 100%);
+  }
   .hero-title { font-size: clamp(2.25rem, 8vw + 1rem, 3rem); }
+  .hero-badge-row { justify-content: flex-start; margin-top: var(--space-lg); }
   .process-item { grid-template-columns: 1fr; gap: var(--space-2xs); }
   .lightbox-nav { width: 40px; height: 40px; }
   .contact-form { padding: var(--space-md); }

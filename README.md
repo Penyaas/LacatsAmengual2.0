@@ -47,7 +47,7 @@ Las fotos placeholder en `.svg` ya se han sustituido por fotografías reales del
 
 | Archivo | Foto |
 |---|---|
-| `assets/img/hero-lacado.jpg/.webp` | Mueble lacado en blanco, superficie con luz rasante (hero, 4:5) |
+| `assets/img/hero-fondo.jpg/.webp` | Foto de taller a pantalla completa, fondo del hero con degradado |
 | `assets/img/taller-can-bareta-manacor.jpg/.webp` | Sillas recién lacadas, interior del taller |
 | `assets/img/restauracion-antes-puerta.jpg/.webp` | Puerta antigua en bruto, antes de lacar |
 | `assets/img/restauracion-despues-puerta.jpg/.webp` | Misma puerta restaurada, teñida y montada |

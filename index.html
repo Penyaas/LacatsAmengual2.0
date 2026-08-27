@@ -103,7 +103,15 @@
 <main id="contenido">
 
   <section class="hero" id="inicio">
-    <div class="wrap">
+    <div class="hero-bg" aria-hidden="true">
+      <picture>
+        <source srcset="assets/img/hero-fondo.webp" type="image/webp">
+        <img src="assets/img/hero-fondo.jpg" alt="" width="2200" height="1228" fetchpriority="high">
+      </picture>
+      <div class="hero-scrim"></div>
+    </div>
+
+    <div class="wrap hero-inner">
       <div class="hero-copy">
         <span class="eyebrow">Taller de lacado · Manacor, Mallorca</span>
         <h1 class="hero-title">Cada mueble se laca con el tiempo que necesita, no el que sobra.</h1>
@@ -121,18 +129,12 @@
           <span>Manacor y comarca de <strong>Llevant</strong></span>
         </div>
       </div>
+    </div>
 
-      <div class="hero-media">
-        <figure>
-          <picture>
-            <source srcset="assets/img/hero-lacado.webp" type="image/webp">
-            <img src="assets/img/hero-lacado.jpg" alt="Mueble lacado en blanco, acabado brillo, recién salido del taller Lacats Amengual" width="855" height="1067">
-          </picture>
-        </figure>
-        <div class="hero-rating" aria-hidden="false">
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <span class="rating-text"><strong>4,8/5</strong><br>reseñas en Google</span>
-        </div>
+    <div class="wrap hero-badge-row">
+      <div class="hero-rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span class="rating-text"><strong>4,8/5</strong><br>reseñas en Google</span>
       </div>
     </div>
   </section>
