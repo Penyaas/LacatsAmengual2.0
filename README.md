@@ -92,9 +92,9 @@ El campo oculto `empresa-web` es un honeypot anti-spam: debe permanecer vacío y
 
 El `<iframe>` de Google Maps en la sección de contacto **no se carga por defecto**: solo se activa si el visitante acepta el banner de cookies o pulsa "Cargar mapa". Esto evita cargar cookies de terceros sin consentimiento. Si en algún momento se elimina el mapa incrustado (por ejemplo, sustituyéndolo por una imagen estática con enlace a Google Maps), el banner de cookies y el bloque `.map-consent` de `main.js` pueden eliminarse por completo, ya que el sitio no cargaría ninguna cookie.
 
-## Campos legales pendientes
+## Campos legales
 
-El NIF de Lacats Amengual C.B. no se publica en el sitio. El correo de contacto ya está fijado a `lacatsamengual@gmail.com` en las páginas legales, el pie de página y `main.js` (`DEST_EMAIL`). Si el NIF se quisiera añadir más adelante (por ejemplo, si lo pide algún proveedor de pago o formulario), es obligatorio en el aviso legal según la LSSI-CE — revísalo con un asesor antes de publicar si eso cambia.
+El NIF de Lacats Amengual C.B. (E16593071) ya está publicado en el aviso legal, junto con el correo de contacto `lacatsamengual@gmail.com` (fijado también en el pie de página y en `main.js`, `DEST_EMAIL`).
 
 También revisa periódicamente el valor `reviewCount` del JSON-LD en `index.html` para que coincida con el número real de reseñas en Google.
 
@@ -106,6 +106,7 @@ También revisa periódicamente el valor `reviewCount` del JSON-LD en `index.htm
 - [ ] Enlaces legales funcionando
 - [ ] Sin errores de consola ni enlaces rotos
 - [x] Imágenes placeholder sustituidas por fotos reales
+- [x] NIF publicado en el aviso legal
 - [ ] Formulario conectado a Netlify/Formspree si no se quiere depender del fallback `mailto:`
 - [ ] URLs canónicas y `sitemap.xml` actualizados con el dominio real
 - [ ] Lighthouse ≥ 95 en Rendimiento, Accesibilidad, Buenas prácticas y SEO
