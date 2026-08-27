@@ -660,14 +660,14 @@ h4 { font-size: var(--text-lg); line-height: var(--leading-snug); font-weight: 6
 @media (max-width: 639px) {
   .hero {
     min-height: 0;
-    padding-top: calc(52vw + var(--space-lg));
+    padding-top: calc(var(--header-height) + var(--space-xl));
     padding-bottom: var(--space-lg);
-    background: #17130f;
   }
-  .hero-bg, .hero-scrim { top: 0; right: 0; left: 0; bottom: auto; height: 52vw; }
-  .hero-bg img { object-position: 50% 42%; }
+  .hero-bg img { object-position: 84% 30%; }
   .hero-scrim {
-    background: linear-gradient(180deg, rgba(20,17,14,0.05) 0%, rgba(20,17,14,0.5) 72%, #17130f 100%);
+    background:
+      linear-gradient(180deg, rgba(20,17,14,0.74) 0%, rgba(20,17,14,0.62) 28%, rgba(20,17,14,0.68) 58%, rgba(20,17,14,0.88) 100%),
+      linear-gradient(90deg, rgba(20,17,14,0.55) 0%, rgba(20,17,14,0.1) 55%);
   }
   .hero-title { font-size: clamp(2.25rem, 8vw + 1rem, 3rem); }
   .hero-badge-row { justify-content: flex-start; margin-top: var(--space-lg); }
