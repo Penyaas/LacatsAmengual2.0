@@ -48,16 +48,15 @@ Las fotos placeholder en `.svg` ya se han sustituido por fotografías reales del
 | Archivo | Foto |
 |---|---|
 | `assets/img/hero-fondo.jpg/.webp` | Foto de taller a pantalla completa, fondo del hero con degradado |
-| `assets/img/taller-can-bareta-manacor.jpg/.webp` | Sillas recién lacadas, interior del taller |
-| `assets/img/restauracion-antes-puerta.jpg/.webp` | Puerta antigua en bruto, antes de lacar |
-| `assets/img/restauracion-despues-puerta.jpg/.webp` | Misma puerta restaurada, teñida y montada |
-| `assets/img/detalle-acabado-satinado.jpg/.webp` | Detalle del acabado brillo, barra de restaurante |
-| `assets/img/lacado-persianas-fachada.jpg/.webp` | Fachada con persianas y puerta exterior lacadas |
-| `assets/img/mueble-medida-taller.jpg/.webp` | Librería a medida, instalación en casa del cliente |
-| `assets/img/portal-antes.jpg/.webp` | Portal de garaje en arco, envejecido |
-| `assets/img/portal-despues.jpg/.webp` | Mismo portal restaurado y lacado |
+| `assets/img/trabajo-armario-antes/-despues.jpg/.webp` | Armario, antes/después |
+| `assets/img/trabajo-cocina-antes/-despues.jpg/.webp` | Cocina, antes/después |
+| `assets/img/trabajo-mesa-antes/-despues.jpg/.webp` | Mesa, antes/después |
+| `assets/img/trabajo-persianas-antes/-despues.jpg/.webp` | Persianas, antes/después |
+| `assets/img/trabajo-puerta-antes/-despues.jpg/.webp` | Puerta, antes/después |
 | `assets/og-image.jpg` | Fachada de la vivienda, imagen para compartir en redes (1200×630) |
 | `assets/favicon.svg` | Monograma "CB", sin cambios |
+
+> **Nota:** las 10 fotos `trabajo-*` (5 parejas antes/después) tienen aspecto de imagen generada por IA/stock, no de fotografías reales de encargos del taller (mismo encuadre exacto en cada pareja, con solo el acabado cambiado). Se usan en la sección "Trabajos" por decisión explícita del cliente pese a advertirlo — revisar si en algún momento se quiere sustituir por trabajos reales fotografiados, dado que la sección los presenta como "piezas que han pasado por el taller".
 
 Si llegan fotos nuevas, sigue el mismo patrón: recorte a la proporción del hueco (ver `aspect-ratio` en `styles.css`, sección `.gallery-item` / `.hero-media`), exporta `.jpg` (calidad ~78) y `.webp` (calidad ~74), y enlaza ambos con `<picture><source type="image/webp">...<img></picture>`. Todas las imágenes de la galería llevan `loading="lazy"` salvo la del hero.
 
