@@ -269,7 +269,7 @@
           "&body=" + encodeURIComponent(body);
 
         window.location.href = mailtoUrl;
-        statusBox.textContent = "Se abrira tu gestor de correo para enviar la consulta. Si no se abre, llamanos al 971 55 36 13.";
+        statusBox.textContent = "Se abrira tu gestor de correo para enviar la consulta. Si no se abre, llamanos al 661 16 22 21.";
         statusBox.className = "form-status is-visible is-success";
         form.reset();
       }
