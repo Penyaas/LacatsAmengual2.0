@@ -247,32 +247,54 @@
         return;
       }
 
+      /* Formulario conectado a Netlify Forms (ver README): envio por AJAX
+         para poder mostrar el mensaje de confirmacion sin salir de la pagina. */
+      if (form.dataset.backend === "connected") {
+        e.preventDefault();
+        var formData = new URLSearchParams(new FormData(form)).toString();
+
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formData
+        })
+          .then(function (response) {
+            if (!response.ok) throw new Error("HTTP " + response.status);
+            statusBox.textContent = "Gracias, hemos recibido tu consulta. Te contactaremos en breve.";
+            statusBox.className = "form-status is-visible is-success";
+            form.reset();
+          })
+          .catch(function () {
+            statusBox.textContent = "No se ha podido enviar. Llamanos al 661 16 22 21 o escribenos a " + DEST_EMAIL + ".";
+            statusBox.className = "form-status is-visible is-error";
+          });
+        return;
+      }
+
       /* Si el formulario no esta conectado a Netlify Forms / Formspree
          (ver README), se usa mailto como envio de reserva. */
-      if (form.dataset.backend !== "connected") {
-        e.preventDefault();
-        var name = form.querySelector("#contact-name").value.trim();
-        var phone = form.querySelector("#contact-phone").value.trim();
-        var type = form.querySelector("#contact-type").value;
-        var message = form.querySelector("#contact-message").value.trim();
+      e.preventDefault();
+      var name = form.querySelector("#contact-name").value.trim();
+      var phone = form.querySelector("#contact-phone").value.trim();
+      var type = form.querySelector("#contact-type").value;
+      var message = form.querySelector("#contact-message").value.trim();
 
-        var subject = "Consulta desde la web – " + type;
-        var body =
-          "Nombre: " + name + "\n" +
-          "Telefono: " + phone + "\n" +
-          "Tipo de trabajo: " + type + "\n\n" +
-          message;
+      var subject = "Consulta desde la web – " + type;
+      var body =
+        "Nombre: " + name + "\n" +
+        "Telefono: " + phone + "\n" +
+        "Tipo de trabajo: " + type + "\n\n" +
+        message;
 
-        var mailtoUrl =
-          "mailto:" + DEST_EMAIL +
-          "?subject=" + encodeURIComponent(subject) +
-          "&body=" + encodeURIComponent(body);
+      var mailtoUrl =
+        "mailto:" + DEST_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
 
-        window.location.href = mailtoUrl;
-        statusBox.textContent = "Se abrira tu gestor de correo para enviar la consulta. Si no se abre, llamanos al 661 16 22 21.";
-        statusBox.className = "form-status is-visible is-success";
-        form.reset();
-      }
+      window.location.href = mailtoUrl;
+      statusBox.textContent = "Se abrira tu gestor de correo para enviar la consulta. Si no se abre, llamanos al 661 16 22 21.";
+      statusBox.className = "form-status is-visible is-success";
+      form.reset();
     });
   }
 

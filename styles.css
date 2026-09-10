@@ -1,7 +1,7 @@
 /* Lacats Amengual · Can Bareta — hoja de estilos única
-   Tokens: color, tipografia, espaciado (escala 4pt), movimiento */
-
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap");
+   Tokens: color, tipografia, espaciado (escala 4pt), movimiento
+   Las fuentes (Fraunces, Work Sans) se cargan desde el <head> de cada
+   pagina de forma no bloqueante, no con @import (bloquearia el render). */
 
 :root {
   /* Color */
