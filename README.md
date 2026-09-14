@@ -96,6 +96,6 @@ También revisa periódicamente el valor `reviewCount` del JSON-LD en `index.htm
 - [x] Imágenes placeholder sustituidas por fotos reales
 - [x] NIF publicado en el aviso legal
 - [x] Formulario conectado a Netlify Forms
-- [x] URLs canónicas y `sitemap.xml` apuntan al dominio real (`lacatsamengual.es`, conectado en Netlify — pendiente de que termine de propagar el DNS)
+- [x] URLs canónicas y `sitemap.xml` apuntan al dominio real (`lacatsamengual.es`, DNS y SSL verificados y funcionando)
 - [ ] Lighthouse ≥ 95 en Rendimiento, Accesibilidad, Buenas prácticas y SEO
 - [x] Favicon `.ico` generado

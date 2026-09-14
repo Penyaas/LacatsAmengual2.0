@@ -140,7 +140,11 @@
       iframe.src = iframe.dataset.src;
     }
     if (mapConsent) mapConsent.remove();
-    try { localStorage.setItem("mapaConsentido", "1"); } catch (err) {}
+    try {
+      localStorage.setItem("mapaConsentido", "1");
+      localStorage.setItem("cookiesDecision", "aceptado");
+    } catch (err) {}
+    if (cookieBanner) cookieBanner.classList.remove("is-visible");
   }
 
   if (mapConsent) {
